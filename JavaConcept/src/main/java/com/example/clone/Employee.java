@@ -25,7 +25,7 @@ public class Employee implements Cloneable {
 	}
 
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
+	protected Employee clone() throws CloneNotSupportedException {
 		Employee cloned = new Employee();
 		if (cloned instanceof Cloneable) 
 			cloned =  (Employee) super.clone();
