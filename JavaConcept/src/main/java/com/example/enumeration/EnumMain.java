@@ -1,5 +1,6 @@
 package com.example.enumeration;
 
+import java.util.EnumSet;
 
 public class EnumMain {
 
@@ -14,6 +15,9 @@ public class EnumMain {
 		System.out.println(Level.LOW.normalize());
 		System.out.println(Level.MEDIUM.normalize());
 		System.out.println(Level.HIGH.normalize());
+		
+		EnumSet<Level> enumSet = EnumSet.of(Level.LOW,Level.MEDIUM);
+		System.out.println(enumSet);
 	}
 
 }
