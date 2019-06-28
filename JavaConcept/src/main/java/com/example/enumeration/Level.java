@@ -1,5 +1,9 @@
 package com.example.enumeration;
 
+/**
+ * @author mohammad.arif
+ * Enum automatically extends java.lang.Enum, so we cannot extends other enum class
+ */
 public enum Level {
 	LOW(1) {
 		@Override
