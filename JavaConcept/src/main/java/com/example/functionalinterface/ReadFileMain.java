@@ -10,12 +10,18 @@ public class ReadFileMain {
 	public static void main(String[] args) throws IOException {
 		List<Employee> employees = Files.lines(Paths.get("C:\\Users\\mohammad.arif\\Desktop\\employee.csv"))
 										.skip(1)
-										.map(line->{
-											String[] arr = line.split("\\,");
-											Employee emp = new Employee(arr[0], Integer.valueOf(arr[1]), Double.valueOf(arr[2]));
-											return emp;
-											})
+										.map(line->stringToEmployee(line))
+										.filter(e->e!=null)
 										.collect(Collectors.toList());
-		System.out.println(employees);
+		
+		employees.forEach(e->System.out.println(e));
+	}
+	
+	public static Employee stringToEmployee(String line) {
+		Employee emp = null;
+		String[] arr = line.split("\\,");
+		if (arr.length==3) 
+			emp = new Employee(arr[0], Integer.valueOf(arr[1]), Double.valueOf(arr[2]));
+		return emp;
 	}
 }
