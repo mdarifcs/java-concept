@@ -10,6 +10,7 @@ public class ReadFileMain {
 	public static void main(String[] args) throws IOException {
 		List<Employee> employees = Files.lines(Paths.get("C:\\Users\\mohammad.arif\\Desktop\\employee.csv"))
 										.skip(1)
+										.peek(e->System.out.println(e))
 										.map(line->stringToEmployee(line))
 										.filter(e->e!=null)
 										.collect(Collectors.toList());
